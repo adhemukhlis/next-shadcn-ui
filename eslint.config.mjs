@@ -9,9 +9,8 @@ import { defineConfig } from 'eslint/config'
 
 const eslintConfig = defineConfig([
 	{
-		ignores: ['**/node_modules/**', '**/.next/**', '**/.git/**', '**/.vscode/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts']
+		ignores: ['**/node_modules/**', '**/.next/**', '**/.git/**', '**/.vscode/**', '.next/**', 'out/**', 'build/**', 'next-env.d.ts', 'src/components/ui']
 	},
-
 	{
 		files: ['**/*.{ts,tsx}'],
 		languageOptions: {
@@ -54,6 +53,7 @@ const eslintConfig = defineConfig([
 			'@eslint-react/no-array-index-key': 'off',
 			'@eslint-react/no-clone-element': 'off',
 			'@eslint-react/dom-no-dangerously-set-innerhtml': 'off',
+			'@eslint-react/use-state': 'off',
 			'prefer-const': 'warn',
 			'no-control-regex': 'off',
 			'@stylistic/padding-line-between-statements': [

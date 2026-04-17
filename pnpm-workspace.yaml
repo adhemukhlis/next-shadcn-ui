@@ -5,9 +5,9 @@ dedupePeerDependents: true
 engineStrict: true
 
 onlyBuiltDependencies:
-  - msw
-  - sharp
-  - unrs-resolver
+ - msw
+ - sharp
+ - unrs-resolver
 
 packageImportMethod: hardlink
 
@@ -18,6 +18,6 @@ sideEffectsCache: true
 storeDir: ~/.pnpm-store
 
 updateConfig:
-  ignoreDependencies:
-    - eslint
-    - '@eslint/js'
+ ignoreDependencies:
+  - eslint
+  - '@eslint/js'

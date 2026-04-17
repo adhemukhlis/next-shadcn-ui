@@ -25,7 +25,16 @@ const nextConfig: NextConfig = {
 	turbopack: {
 		resolveExtensions: ['.mdx', '.tsx', '.ts', '.jsx', '.js', '.mjs', '.json']
 	},
-	typedRoutes: true
+	typedRoutes: true,
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'api.dicebear.com'
+			}
+		],
+		dangerouslyAllowSVG: true
+	}
 }
 
 export default nextConfig

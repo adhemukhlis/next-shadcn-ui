@@ -1,0 +1,11 @@
+{
+	"name": "svgjs",
+	"version": "1.0.0",
+	"description": "",
+	"scripts": {
+		"generate": "pnpm tsx cli.ts"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {}
+}
