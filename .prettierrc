@@ -4,7 +4,7 @@
 	"tabWidth": 1,
 	"bracketSameLine": true,
 	"singleQuote": true,
-	"trailingComma": "none",
+	"trailingComma": "all",
 	"arrowParens": "always",
 	"semi": false,
 	"proseWrap": "never",

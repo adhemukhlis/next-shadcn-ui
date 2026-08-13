@@ -1,0 +1,9 @@
+telemetry = false
+[install]
+peer = true
+linker = "hoisted"
+globalStore = true
+saveTextLockfile = true
+concurrentScripts = 4
+[run]
+noOrphans = true

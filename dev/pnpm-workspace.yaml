@@ -1,0 +1,34 @@
+# Automatically install missing peer dependencies
+autoInstallPeers: true
+
+# Deduplicate packages that share peer dependencies to reduce size
+dedupePeerDependents: true
+
+# Enforce Node.js and package manager version requirements
+engineStrict: true
+
+# Link files from the global store to save disk space
+packageImportMethod: hardlink
+
+# Only install what is in the lockfile to ensure reproducible builds
+preferFrozenLockfile: true
+
+# Cache compilation/build steps of packages to speed up future installs
+sideEffectsCache: true
+
+# Directory where pnpm stores all downloaded packages globally
+storeDir: ~/.pnpm-store
+
+# Prevent installing packages published less than 24 hours (1440 minutes) ago (security check)
+# minimumReleaseAge: 1440
+
+# Fail the installation if a package is too new and no older version is available
+minimumReleaseAgeStrict: false
+
+# minimumReleaseAgeExclude:
+#   - eslint-plugin-perfectionist
+
+# Auto update config
+updateConfig:
+ ignoreDependencies:
+  - typescript

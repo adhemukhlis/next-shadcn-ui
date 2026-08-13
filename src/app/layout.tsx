@@ -1,38 +1,23 @@
 import { Geist } from 'next/font/google'
 
-import { cn } from '@/lib/utils'
-
+import type { PropsWithChildren } from '@/types/common'
 import type { Metadata, Viewport } from 'next'
-import type { FC, PropsWithChildren } from 'react'
+import type { ReactNode } from 'react'
 
 import '@/styles/global.css'
 
-const nextFont = Geist({
-	style: ['normal'],
-	weight: ['300', '400', '500', '600', '700', '800', '900'],
-	subsets: ['latin'],
-	display: 'swap',
-	variable: '--font-sans',
-	adjustFontFallback: false
-})
+const geist = Geist({ adjustFontFallback: false, display: 'swap', subsets: ['latin'], variable: '--font-sans' })
 
-export const metadata: Metadata = {
-	title: 'next-shadcn-ui',
-	description: 'Next.js shadcn ui'
-}
+export const metadata: Metadata = { description: 'next-shadcn-ui', title: 'next-shadcn-ui' }
 
-export const viewport: Viewport = {
-	themeColor: '#FAFAFA'
-}
+export const viewport: Viewport = { colorScheme: 'light', initialScale: 1, maximumScale: 1, minimumScale: 1, themeColor: '#FAFAFA', userScalable: false, viewportFit: 'contain' }
 
-const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+export default function Layout({ children }: PropsWithChildren): ReactNode {
 	return (
 		<html
-			lang="en"
-			className={cn('font-sans', nextFont.variable)}>
+			className={geist.variable}
+			lang="en">
 			<body>{children}</body>
 		</html>
 	)
 }
-
-export default RootLayout

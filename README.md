@@ -1,1 +1,1 @@
-# next-blank
+# next-shadcn-ui

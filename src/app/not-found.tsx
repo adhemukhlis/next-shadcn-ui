@@ -1,10 +1,10 @@
-const NotFound = () => {
+import type { ReactNode } from 'react'
+
+export default function NotFoundPage(): ReactNode {
 	return (
-		<div className="page column justify-center align-center">
+		<div className="flex min-h-dvh flex-col items-center justify-center gap-4 px-4 text-center">
 			<h2>Not Found</h2>
-			<p>Could not find requested URL</p>
+			<p className="text-muted-foreground">Could not find requested URL</p>
 		</div>
 	)
 }
-
-export default NotFound

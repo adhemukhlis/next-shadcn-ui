@@ -2,30 +2,21 @@ import { ImageResponse } from 'next/og'
 
 import type { CSSProperties } from 'react'
 
-export const runtime = 'edge'
-
-export const size = {
-	width: 36,
-	height: 36
-}
+export const size = { height: 36, width: 36 }
 
 const iconStyle: CSSProperties = {
-	fontSize: 24,
-	background: '#111111',
-	width: '100%',
-	height: '100%',
-	display: 'flex',
 	alignItems: 'center',
+	background: '#111111',
+	color: 'white',
+	display: 'flex',
+	fontSize: 24,
+	height: '100%',
 	justifyContent: 'center',
-	color: 'white'
+	width: '100%',
 }
 
 export const contentType = 'image/png'
 
-const Icon = () => {
-	return new ImageResponse(<div style={iconStyle}>NS</div>, {
-		...size
-	})
+export default function Icon(): ImageResponse {
+	return new ImageResponse(<div style={iconStyle}>S</div>, { ...size })
 }
-
-export default Icon
