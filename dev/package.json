@@ -7,6 +7,7 @@
 		"@next/eslint-plugin-next": "^16.3.0",
 		"@stylistic/eslint-plugin": "^5.10.0",
 		"eslint": "^10.8.1",
+		"eslint-plugin-better-tailwindcss": "^4.7.0",
 		"eslint-plugin-perfectionist": "^5.10.1",
 		"globals": "^17.9.0",
 		"prettier": "^3.9.6",
@@ -15,10 +16,10 @@
 	},
 	"name": "dev",
 	"scripts": {
-		"fix": "npx eslint --config ./eslint.config.mjs --fix",
-		"format": "npx prettier --config ../.prettierrc --ignore-path ../.prettierignore --log-level silent --write \"../**/*.{js,jsx,mjs,cjs,ts,tsx,css,scss,less,json,yml,yaml,md}\"",
-		"lint": "npx eslint --config ./eslint.config.mjs",
-		"minify": "npx prettier --config ../.minifyrc --ignore-path ../.prettierignore --log-level silent --write \"../**/*.{js,jsx,mjs,cjs,ts,tsx,css,scss,less,json,yml,yaml,md}\""
+		"fix": "pnpm eslint --config ./eslint.config.mjs --fix",
+		"format": "pnpm prettier --config ../.prettierrc --ignore-path ../.prettierignore --log-level silent --write \"../**/*.{js,jsx,mjs,cjs,ts,tsx,css,scss,less,json,yml,yaml,md}\"",
+		"lint": "pnpm eslint --config ./eslint.config.mjs",
+		"minify": "pnpm prettier --config ../.minifyrc --ignore-path ../.prettierignore --log-level silent --write \"../**/*.{js,jsx,mjs,cjs,ts,tsx,css,scss,less,json,yml,yaml,md}\""
 	},
 	"type": "module",
 	"version": "1.0.0"

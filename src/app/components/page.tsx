@@ -1,6 +1,7 @@
 'use client'
 
 import { Check, ChevronDown, Plus, Settings } from 'lucide-react'
+import Image from 'next/image'
 import { useState } from 'react'
 
 import {
@@ -48,6 +49,8 @@ import { Header } from '@/components/site/header'
 
 import type { ReactNode } from 'react'
 
+const notionistsAvatarSrc = 'https://api.dicebear.com/10.x/notionists/svg?seed=Ada'
+
 export default function Page(): ReactNode {
 	const [tab, setTab] = useState('overview')
 
@@ -58,7 +61,8 @@ export default function Page(): ReactNode {
 				<div className="mb-10 space-y-3">
 					<h1 className="text-3xl font-semibold tracking-tight">Components</h1>
 					<p className="max-w-prose text-balance text-muted-foreground">
-						Every component in the baseline, imported from the internal tree. Upstream sources live in <code className="rounded bg-muted px-1 py-0.5 text-xs">src/components/base</code>.
+						Every component in the baseline, imported from the internal tree. Upstream sources live in{' '}
+						<code className="rounded-sm bg-muted px-1 py-0.5 text-xs">src/components/base</code>.
 					</p>
 				</div>
 
@@ -192,8 +196,15 @@ export default function Page(): ReactNode {
 						<div className="flex items-center gap-4">
 							<Avatar>
 								<AvatarImage
-									alt="Ada"
-									src="https://i.pravatar.cc/96?img=15"
+									render={
+										<Image
+											alt="Ada"
+											height={96}
+											src={notionistsAvatarSrc}
+											width={96}
+										/>
+									}
+									src={notionistsAvatarSrc}
 								/>
 								<AvatarFallback>AD</AvatarFallback>
 							</Avatar>
@@ -291,7 +302,7 @@ export default function Page(): ReactNode {
 function Example({ children, label }: { children: ReactNode; label: string }) {
 	return (
 		<div className="flex flex-col items-start gap-2">
-			<span className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</span>
+			<span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">{label}</span>
 			{children}
 		</div>
 	)

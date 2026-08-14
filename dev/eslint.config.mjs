@@ -4,6 +4,7 @@ import jsEslint from '@eslint/js'
 // import cspell from '@cspell/eslint-plugin'
 import stylistic from '@stylistic/eslint-plugin'
 import next from '@next/eslint-plugin-next'
+import betterTailwindcss from 'eslint-plugin-better-tailwindcss'
 import perfectionist from 'eslint-plugin-perfectionist'
 import { defineConfig } from 'eslint/config'
 import globals from 'globals'
@@ -192,12 +193,32 @@ const eslintConfig = defineConfig([
 	{
 		files: ['**/*.{ts,tsx,js,jsx}'],
 		languageOptions: { globals: { ...globals.browser } },
-		plugins: { '@next/next': next, '@stylistic': stylistic, perfectionist },
+		plugins: { '@next/next': next, '@stylistic': stylistic, perfectionist, 'better-tailwindcss': betterTailwindcss },
 		extends: [eslintReact.configs['strict-typescript']],
+		settings: {
+			// Tailwind CSS v4 uses the CSS file as its config entry point
+			'better-tailwindcss': { entryPoint: 'src/styles/global.css' },
+		},
 		rules: {
 			// Next.js Stack Rules
+			// Explicit overrides for the HTML-element convention:
+			// raw `<a>` → `<Link>` from next/link · raw `<img>` → `<Image>` from next/image.
 			...next.configs.recommended.rules,
 			...next.configs['core-web-vitals'].rules,
+			'@next/next/no-html-link-for-pages': 'error',
+			'@next/next/no-img-element': 'error',
+
+			// Tailwind CSS Rules (class sorting owned by ESLint, prettier only formats)
+			'better-tailwindcss/enforce-canonical-classes': 'error',
+			'better-tailwindcss/enforce-consistent-class-order': 'error',
+			'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
+			'better-tailwindcss/enforce-consistent-variant-order': 'error',
+			'better-tailwindcss/no-conflicting-classes': 'error',
+			'better-tailwindcss/no-concatenated-classes': 'error',
+			'better-tailwindcss/no-deprecated-classes': 'error',
+			'better-tailwindcss/no-duplicate-classes': 'error',
+			'better-tailwindcss/no-unknown-classes': 'error',
+			'better-tailwindcss/no-unnecessary-whitespace': 'error',
 
 			// React Core Quality Rules
 			'@eslint-react/dom-no-dangerously-set-innerhtml': 'warn',
