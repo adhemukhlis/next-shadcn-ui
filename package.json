@@ -29,6 +29,8 @@
 	"private": true,
 	"scripts": {
 		"build": "next build",
+		"components:diff": "shadcn diff -y",
+		"components:update": "shadcn add --overwrite --yes",
 		"deps:reset": "rm -rf node_modules .next && pnpm install",
 		"deps:show": "pnpm ls --depth=Infinity",
 		"deps:upgrade": "pnpm dlx npm-check-updates -u && pnpm install",

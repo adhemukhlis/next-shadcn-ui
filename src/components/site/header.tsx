@@ -4,7 +4,7 @@ import { ThemeToggle } from '@/components/internal/theme-toggle'
 
 function Header() {
 	return (
-		<header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
+		<header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-sm">
 			<div className="mx-auto flex h-12 w-full max-w-5xl items-center justify-between px-4">
 				<Link
 					className="text-sm font-medium"

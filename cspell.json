@@ -4,6 +4,6 @@
 	"language": "en,id",
 	"import": ["@cspell/dict-id-id/cspell-ext.json"],
 	"dictionaries": ["id-id"],
-	"words": ["dicebear", "innerhtml", "turbopack"],
+	"words": ["dicebear", "innerhtml", "notionists", "turbopack"],
 	"ignorePaths": ["node_modules/**", ".next/**", "pnpm-lock.yaml"]
 }
