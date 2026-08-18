@@ -2,10 +2,11 @@
 
 import { Dialog as DialogPrimitive } from '@base-ui/react/dialog'
 import { XIcon } from 'lucide-react'
-import * as React from 'react'
 
 import { Button } from '@/components/internal/button'
 import { cn } from '@/lib/utils'
+
+import type { ComponentProps } from 'react'
 
 function Dialog({ ...props }: DialogPrimitive.Root.Props) {
 	return (
@@ -66,7 +67,7 @@ function DialogDescription({ className, ...props }: DialogPrimitive.Description.
 	)
 }
 
-function DialogFooter({ children, className, showCloseButton = false, ...props }: React.ComponentProps<'div'> & { showCloseButton?: boolean }) {
+function DialogFooter({ children, className, showCloseButton = false, ...props }: ComponentProps<'div'> & { showCloseButton?: boolean }) {
 	return (
 		<div
 			className={cn('-mx-4 -mb-4 flex flex-col-reverse gap-2 rounded-b-xl border-t bg-muted/50 p-4 sm:flex-row sm:justify-end', className)}
@@ -78,7 +79,7 @@ function DialogFooter({ children, className, showCloseButton = false, ...props }
 	)
 }
 
-function DialogHeader({ className, ...props }: React.ComponentProps<'div'>) {
+function DialogHeader({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			className={cn('flex flex-col gap-2', className)}

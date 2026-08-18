@@ -56,6 +56,21 @@ const eslintConfig = defineConfig([
 			'object-shorthand': ['warn', 'always'],
 			'prefer-const': 'error',
 			'prefer-template': 'warn',
+			'no-restricted-imports': [
+				'error',
+				{
+					patterns: [
+						{
+							group: ['react'],
+							importNamePattern: '^\\*$',
+						},
+						{
+							group: ['@/components/base'],
+							message: 'fork only components',
+						},
+					],
+				},
+			],
 
 			// Universal TypeScript Rules
 			'@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
@@ -227,6 +242,7 @@ const eslintConfig = defineConfig([
 			'@eslint-react/no-clone-element': 'warn',
 			'@eslint-react/no-missing-component-display-name': 'off',
 			'@eslint-react/no-missing-key': 'error',
+			'@eslint-react/exhaustive-deps': 'off', // we don't need exhaustive deps
 
 			// React Stylistic Formatting
 			'@stylistic/jsx-child-element-spacing': 'warn',

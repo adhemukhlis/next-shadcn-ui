@@ -2,9 +2,10 @@
 
 import { Menu as MenuPrimitive } from '@base-ui/react/menu'
 import { CheckIcon, ChevronRightIcon } from 'lucide-react'
-import * as React from 'react'
 
 import { cn } from '@/lib/utils'
+
+import type { ComponentProps } from 'react'
 
 function DropdownMenu({ ...props }: MenuPrimitive.Root.Props) {
 	return (
@@ -152,7 +153,7 @@ function DropdownMenuSeparator({ className, ...props }: MenuPrimitive.Separator.
 	)
 }
 
-function DropdownMenuShortcut({ className, ...props }: React.ComponentProps<'span'>) {
+function DropdownMenuShortcut({ className, ...props }: ComponentProps<'span'>) {
 	return (
 		<span
 			className={cn('ml-auto text-xs tracking-widest text-muted-foreground group-focus/dropdown-menu-item:text-accent-foreground', className)}
@@ -171,7 +172,7 @@ function DropdownMenuSub({ ...props }: MenuPrimitive.SubmenuRoot.Props) {
 	)
 }
 
-function DropdownMenuSubContent({ align = 'start', alignOffset = -3, className, side = 'right', sideOffset = 0, ...props }: React.ComponentProps<typeof DropdownMenuContent>) {
+function DropdownMenuSubContent({ align = 'start', alignOffset = -3, className, side = 'right', sideOffset = 0, ...props }: ComponentProps<typeof DropdownMenuContent>) {
 	return (
 		<DropdownMenuContent
 			align={align}

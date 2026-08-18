@@ -22,6 +22,11 @@ function Header() {
 						href="/components">
 						Components
 					</Link>
+					<Link
+						className="text-muted-foreground transition-colors hover:text-foreground"
+						href="/demo">
+						Demo
+					</Link>
 					<ThemeToggle />
 				</nav>
 			</div>
