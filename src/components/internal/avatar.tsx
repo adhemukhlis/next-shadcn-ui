@@ -1,9 +1,10 @@
 'use client'
 
 import { Avatar as AvatarPrimitive } from '@base-ui/react/avatar'
-import * as React from 'react'
 
 import { cn } from '@/lib/utils'
+
+import type { ComponentProps } from 'react'
 
 function Avatar({ className, render, size = 'default', ...props }: AvatarPrimitive.Root.Props & { size?: 'default' | 'lg' | 'sm' }) {
 	return (
@@ -21,7 +22,7 @@ function Avatar({ className, render, size = 'default', ...props }: AvatarPrimiti
 	)
 }
 
-function AvatarBadge({ className, ...props }: React.ComponentProps<'span'>) {
+function AvatarBadge({ className, ...props }: ComponentProps<'span'>) {
 	return (
 		<span
 			className={cn(
@@ -47,7 +48,7 @@ function AvatarFallback({ className, ...props }: AvatarPrimitive.Fallback.Props)
 	)
 }
 
-function AvatarGroup({ className, ...props }: React.ComponentProps<'div'>) {
+function AvatarGroup({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			className={cn('group/avatar-group flex -space-x-2 *:data-[slot=avatar]:ring-2 *:data-[slot=avatar]:ring-background', className)}
@@ -57,7 +58,7 @@ function AvatarGroup({ className, ...props }: React.ComponentProps<'div'>) {
 	)
 }
 
-function AvatarGroupCount({ className, ...props }: React.ComponentProps<'div'>) {
+function AvatarGroupCount({ className, ...props }: ComponentProps<'div'>) {
 	return (
 		<div
 			className={cn(
