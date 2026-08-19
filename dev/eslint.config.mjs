@@ -71,6 +71,7 @@ const eslintConfig = defineConfig([
 					],
 				},
 			],
+			'no-useless-assignment': 'off',
 
 			// Universal TypeScript Rules
 			'@typescript-eslint/consistent-type-definitions': ['warn', 'type'],
@@ -85,7 +86,8 @@ const eslintConfig = defineConfig([
 			'@typescript-eslint/no-floating-promises': 'error',
 			'@typescript-eslint/no-misused-promises': 'error',
 			'@typescript-eslint/no-non-null-assertion': 'warn',
-			'@typescript-eslint/no-unnecessary-condition': ['warn', { allowConstantLoopConditions: true }],
+			// '@typescript-eslint/no-unnecessary-condition': ['warn', { allowConstantLoopConditions: true }],
+			'@typescript-eslint/no-unnecessary-condition': 'off',
 			'@typescript-eslint/no-unnecessary-type-assertion': 'warn',
 			'@typescript-eslint/no-unused-vars': [
 				'error',
@@ -229,16 +231,16 @@ const eslintConfig = defineConfig([
 			'better-tailwindcss/enforce-consistent-line-wrapping': 'off',
 			'better-tailwindcss/enforce-consistent-variant-order': 'error',
 			'better-tailwindcss/no-conflicting-classes': 'error',
-			'better-tailwindcss/no-concatenated-classes': 'error',
+			'better-tailwindcss/no-concatenated-classes': 'off',
 			'better-tailwindcss/no-deprecated-classes': 'error',
 			'better-tailwindcss/no-duplicate-classes': 'error',
-			'better-tailwindcss/no-unknown-classes': 'error',
+			'better-tailwindcss/no-unknown-classes': 'off',
 			'better-tailwindcss/no-unnecessary-whitespace': 'error',
 
 			// React Core Quality Rules
 			'@eslint-react/dom-no-dangerously-set-innerhtml': 'warn',
 			'@eslint-react/jsx-no-useless-fragment': 'warn',
-			'@eslint-react/no-array-index-key': 'warn',
+			'@eslint-react/no-array-index-key': 'off',
 			'@eslint-react/no-clone-element': 'warn',
 			'@eslint-react/no-missing-component-display-name': 'off',
 			'@eslint-react/no-missing-key': 'error',

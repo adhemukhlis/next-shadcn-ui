@@ -8,5 +8,8 @@
 	"rtl": false,
 	"aliases": { "components": "@/components", "utils": "@/lib/utils", "ui": "@/components/base", "lib": "@/lib", "hooks": "@/hooks" },
 	"menuColor": "default",
-	"menuAccent": "subtle"
+	"menuAccent": "subtle",
+	"registries": {
+		"@bklit": "https://ui.bklit.com/r/{name}.json"
+	}
 }
