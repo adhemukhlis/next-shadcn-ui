@@ -1,8 +1,30 @@
 import { Suspense } from 'react'
 
+import { Bar } from '@/components/charts/bar'
+import { BarChart } from '@/components/charts/bar-chart'
+import { BarXAxis } from '@/components/charts/bar-x-axis'
+import { BarYAxis } from '@/components/charts/bar-y-axis'
+import { Grid } from '@/components/charts/grid'
+import { ChartTooltip } from '@/components/charts/tooltip/chart-tooltip'
+
 import type { ReactNode } from 'react'
 
 const SECTION_DELAY_MS = 180
+
+const REVENUE_PROFIT_DATA: Array<Record<string, unknown>> = [
+	{ month: 'Jan', profit: 16200, revenue: 42100 },
+	{ month: 'Feb', profit: 14100, revenue: 38900 },
+	{ month: 'Mar', profit: 18900, revenue: 45200 },
+	{ month: 'Apr', profit: 21400, revenue: 49800 },
+	{ month: 'May', profit: 24600, revenue: 53400 },
+	{ month: 'Jun', profit: 27300, revenue: 58600 },
+	{ month: 'Jul', profit: 26100, revenue: 57100 },
+	{ month: 'Aug', profit: 29800, revenue: 62300 },
+	{ month: 'Sep', profit: 31900, revenue: 64800 },
+	{ month: 'Oct', profit: 34100, revenue: 68500 },
+	{ month: 'Nov', profit: 32800, revenue: 66200 },
+	{ month: 'Dec', profit: 36700, revenue: 71200 },
+]
 
 export default function Page(): ReactNode {
 	return (
@@ -36,6 +58,32 @@ export default function Page(): ReactNode {
 							value="60"
 						/>
 					</div>
+				</StreamedSection>
+			</Suspense>
+			<Suspense fallback={<SectionSkeleton />}>
+				<StreamedSection title="Revenue & Profit">
+					<p>Monthly revenue and profit over the last twelve months.</p>
+					<BarChart
+						data={REVENUE_PROFIT_DATA}
+						xDataKey="month">
+						<Grid />
+						<Bar
+							dataKey="revenue"
+							fill="var(--chart-1)"
+							stroke="var(--chart-1)"
+						/>
+						<Bar
+							dataKey="profit"
+							fill="var(--chart-2)"
+							stroke="var(--chart-2)"
+						/>
+						<BarXAxis />
+						<BarYAxis
+							numTicks={5}
+							unit="IDR"
+						/>
+						<ChartTooltip />
+					</BarChart>
 				</StreamedSection>
 			</Suspense>
 			<Suspense fallback={<SectionSkeleton />}>
